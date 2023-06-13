@@ -69,3 +69,18 @@ def view(viewID):
                     Note.printNote(line)
 
 
+def viewByDate():
+    dateToView = input("Введите дату в формате гггг-мм-дд")
+    notes = []
+    with open('NoteList.csv', 'r') as noteList:
+        for line in noteList:
+            if line != '':
+                date = line[line.find('date1=') + 6: line.find(';date2') - 9]
+                if date == dateToView:
+                    notes.append(line)
+
+        if len(notes) > 0:
+            for line in notes:
+               Note.printNote(line)
+        else:
+            print("На эту дату записей нет, либо дата введена неверно")

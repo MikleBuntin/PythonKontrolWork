@@ -18,3 +18,7 @@ def view():
 
 def change():
     Repository.change()
+
+
+def viewByDate():
+    Repository.viewByDate()

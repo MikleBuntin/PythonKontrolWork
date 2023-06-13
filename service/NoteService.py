@@ -1,5 +1,5 @@
 from datetime import datetime
-import model
+from model import Note
 from repository import Repository
 
 
@@ -8,8 +8,8 @@ def add():
     date1 = datetime.now().strftime('%Y-%m-%d %H.%M.%S')
     date2 = datetime.now().strftime('%Y-%m-%d %H.%M.%S')
     name = input("Введите название заметки")
-    note = input("Введите текст заметки")
-    newNote = model.Note(id, date1, date2, name, note)
+    text = input("Введите текст заметки")
+    newNote = Note.Note(id, date1, date2, name, text)
     Repository.add(newNote)
 
 
@@ -19,11 +19,11 @@ def delete():
 
 
 def change(line):
-    model.Note.printNote(line)
+    Note.printNote(line)
     newNote = input("Введите новую заметку: ")
     return line[: line.find('date2=') + 6] + \
            datetime.now().strftime('%Y-%m-%d %H.%M.%S') + \
-           line[line.find(';name='): line.find(';note=') + 6] + \
+           line[line.find(';name='): line.find(';text=') + 6] + \
            newNote + ";;\n"
 
 

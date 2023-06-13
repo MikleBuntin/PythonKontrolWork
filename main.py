@@ -18,6 +18,7 @@ while command != "Q":
         "3 - Удалить заметку \n" +
         "4 - Исправить заметку \n" +
         "5 - Просмотреть одну заметку \n" +
+        "6 - Выбрать по дате \n" +
         "Q - выйти")
     command = input("Введите команду")
     if command == "1":
@@ -30,5 +31,7 @@ while command != "Q":
         controller.Controller.change();
     elif command == "5":
         controller.Controller.view();
+    elif command == "6":
+        controller.Controller.viewByDate();
 
 
