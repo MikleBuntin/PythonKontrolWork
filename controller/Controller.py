@@ -1,5 +1,9 @@
-from repository import repository
+from repository import Repository
+from service import NoteService
 
 
 def viewAll():
-    repository.Repository.viewAll();
+    Repository.viewAll();
+
+def add():
+    NoteService.add()

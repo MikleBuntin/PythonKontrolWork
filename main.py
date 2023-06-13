@@ -2,6 +2,13 @@
 import controller.Controller
 
 print("Добрый день!")
+try:
+    file = open('NoteList.csv', 'r')
+    print('NoteList.csv opened')
+except OSError:
+    file = open('NoteList.csv', 'w')
+    print('New file NoteList.csv created')
+
 command = 0
 
 while command != "Q":
