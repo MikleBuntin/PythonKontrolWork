@@ -17,6 +17,7 @@ while command != "Q":
         "2 - Добавить заметку \n" +
         "3 - Удалить заметку \n" +
         "4 - Исправить заметку \n" +
+        "5 - Просмотреть одну заметку \n" +
         "Q - выйти")
     command = input("Введите команду")
     if command == "1":
@@ -27,5 +28,7 @@ while command != "Q":
         controller.Controller.delete();
     elif command == "4":
         controller.Controller.change();
+    elif command == "5":
+        controller.Controller.view();
 
 

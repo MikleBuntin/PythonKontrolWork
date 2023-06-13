@@ -24,7 +24,8 @@ def printNote(line):
     date2 = line[line.find('date2=') + 6: line.find(';name=')]
     name = line[line.find('name=') + 5: line.find(';note=')]
     note = line[line.find('note=') + 5: line.find(';;')]
-    print("Created date:" + date1 + "\n" +
-          "Saved date:" + date2 + "\n" +
+    print("ID: " + str(id) + "\n" +
+          "Created date:" + str(date1) + "\n" +
+          "Saved date:" + str(date2) + "\n" +
           "'" + name + "'" + ": \n" +
           note + "\n")
